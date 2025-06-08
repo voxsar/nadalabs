@@ -403,6 +403,202 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section className="relative w-full py-20 bg-white">
+        <div className="w-full flex items-center justify-center">
+          <div className="w-[1275px] px-6 flex items-start space-x-12">
+            {/* Column 1 - Contact Information */}
+            <div className="w-1/2 flex flex-col justify-between h-full">
+              {/* Top Content */}
+              <div>
+                <div 
+                  className="inline-block w-fit rounded-full px-6 py-3 mb-8"
+                  style={{
+                    backgroundColor: "var(--brand-orange-light)",
+                    border: "1px solid var(--brand-orange)",
+                    color: "var(--brand-orange)"
+                  }}
+                >
+                  <span 
+                    className="font-[family-name:var(--font-poppins)] font-normal"
+                    style={{ fontSize: "16px" }}
+                  >
+                    Talk to an Expert
+                  </span>
+                </div>
+                
+                <h2 
+                  className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight mb-6"
+                  style={{ fontSize: "48px" }}
+                >
+                  Need more information
+                </h2>
+                
+                <p 
+                  className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed mb-12"
+                  style={{ fontSize: "16px" }}
+                >
+                  Tell us about your preferences and we&apos;ll guide you through the process.
+                </p>
+              </div>
+              
+              {/* Bottom Content - Contact Details */}
+              <div className="mt-auto">
+                <h3 
+                  className="font-[family-name:var(--font-inter)] font-normal text-black mb-6"
+                  style={{ fontSize: "24px" }}
+                >
+                  Contact Us Now
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Image
+                      src="/phone.png"
+                      alt="Phone"
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      +94 11 294 9203
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3">
+                    <Image
+                      src="/email.png"
+                      alt="Email"
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      info@nadalabs.biz
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <Image
+                      src="/location.png"
+                      alt="Location"
+                      width={20}
+                      height={20}
+                      className="flex-shrink-0 mt-1"
+                    />
+                    <div 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed"
+                      style={{ fontSize: "16px" }}
+                    >
+                      157/4A Awariwatta Rd,<br />
+                      Wattala,<br />
+                      Sri Lanka.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Column 2 - Contact Form */}
+            <div className="w-1/2">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <form className="space-y-6">
+                  {/* Name Fields - Two Columns */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                      <input
+                        type="text"
+                        placeholder="John"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-400 focus:border-gray-600 focus:outline-none transition-colors"
+                        style={{ fontSize: "16px" }}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">&nbsp;</label>
+                      <input
+                        type="text"
+                        placeholder="Doe"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-400 focus:border-gray-600 focus:outline-none transition-colors"
+                        style={{ fontSize: "16px" }}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Email Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input
+                      type="email"
+                      placeholder="johndoe@example.com"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-400 focus:border-gray-600 focus:outline-none transition-colors"
+                      style={{ fontSize: "16px" }}
+                    />
+                  </div>
+                  
+                  {/* Contact Number Field */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Contact No.</label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-400 focus:border-gray-600 focus:outline-none transition-colors"
+                      style={{ fontSize: "16px" }}
+                    />
+                  </div>
+                  
+                  {/* Message Textarea */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Need help? Let us know your preferences.</label>
+                    <textarea
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-400 focus:border-gray-600 focus:outline-none transition-colors resize-vertical"
+                      style={{ fontSize: "16px" }}
+                    ></textarea>
+                  </div>
+                  
+                  {/* Checkbox */}
+                  <div className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      id="email-preference"
+                      className="mt-1 w-4 h-4 text-blue-600 border-gray-400 rounded focus:ring-blue-500"
+                    />
+                    <label 
+                      htmlFor="email-preference" 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-600 leading-relaxed"
+                      style={{ fontSize: "11px" }}
+                    >
+                      I prefer not to receive emails from Nadalabs about product updates, promotions, marketing tips, or related news. If I don&apos;t check this box, I understand I&apos;ll be automatically subscribed.
+                    </label>
+                  </div>
+                  
+                  {/* Submit Button */}
+                  <div className="pt-4">
+                    <button 
+                      type="submit"
+                      className="font-[family-name:var(--font-figtree)] rounded-full px-8 py-3 transition-colors hover:opacity-90"
+                      style={{
+                        backgroundColor: "var(--brand-yellow)",
+                        fontSize: "16px",
+                        color: "#000"
+                      }}
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 	  
 
       {/* Footer */}
