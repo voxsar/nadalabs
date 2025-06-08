@@ -173,14 +173,14 @@ export default function Home() {
                 className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed"
                 style={{ fontSize: "16px" }}
               >
-                Business networks are complex by nature. Add in multiple locations and vendors, different ways of working, and evolving technology needs and the infrastructure can quickly get out of control. Without proper transparency, oversight, and expertise, companies end up relying on insufficient legacy systems, building out unsustainable networks, and overspending on services they don't need.
+                Business networks are complex by nature. Add in multiple locations and vendors, different ways of working, and evolving technology needs and the infrastructure can quickly get out of control. Without proper transparency, oversight, and expertise, companies end up relying on insufficient legacy systems, building out unsustainable networks, and overspending on services they don&apos;t need.
               </p>
               
               <p 
                 className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed mb-8"
                 style={{ fontSize: "16px" }}
               >
-                Nadalabs can help you right-fit your technology to meet your current network needs and scale as you grow. Your network may be complex, but it doesn't have to be unmanageable. Let NadaLabs show you how.
+                Nadalabs can help you right-fit your technology to meet your current network needs and scale as you grow. Your network may be complex, but it doesn&apos;t have to be unmanageable. Let NadaLabs show you how.
               </p>
               
               <div className="mt-8">
