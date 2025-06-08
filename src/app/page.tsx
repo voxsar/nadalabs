@@ -130,6 +130,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Who We Are Section */}
+      <section className="relative w-full py-20 bg-white">
+        <div className="w-full flex items-center justify-center">
+          <div className="w-[1275px] flex items-start space-x-12">
+            {/* First column - 40% */}
+            <div className="w-2/5 flex flex-col">
+              <div 
+                className="inline-block w-fit rounded-full px-6 py-3 mb-8"
+                style={{
+                  backgroundColor: "var(--brand-orange-light)",
+				  border: "1px solid var(--brand-orange)",
+                  color: "var(--brand-orange)"
+                }}
+              >
+                <span 
+                  className="font-[family-name:var(--font-poppins)] font-normal"
+                  style={{ fontSize: "16px" }}
+                >
+                  Who We Are
+                </span>
+              </div>
+              
+              <h2 
+                className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight"
+                style={{ fontSize: "48px" }}
+              >
+                Streamline your entire network.
+              </h2>
+            </div>
+            
+            {/* Second column - 60% */}
+            <div className="w-3/5 flex flex-col space-y-6">
+              <p 
+                className="font-[family-name:var(--font-poppins)] font-semibold text-gray-800 leading-relaxed"
+                style={{ fontSize: "16px" }}
+              >
+                NadaLabs provides comprehensive, managed technology solutions to help businesses streamline their network to make communications, collaboration and connectivity simple and cost-effective.
+              </p>
+              
+              <p 
+                className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed"
+                style={{ fontSize: "16px" }}
+              >
+                Business networks are complex by nature. Add in multiple locations and vendors, different ways of working, and evolving technology needs and the infrastructure can quickly get out of control. Without proper transparency, oversight, and expertise, companies end up relying on insufficient legacy systems, building out unsustainable networks, and overspending on services they don't need.
+              </p>
+              
+              <p 
+                className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed mb-8"
+                style={{ fontSize: "16px" }}
+              >
+                Nadalabs can help you right-fit your technology to meet your current network needs and scale as you grow. Your network may be complex, but it doesn't have to be unmanageable. Let NadaLabs show you how.
+              </p>
+              
+              <div className="mt-8">
+                <button 
+                  className="font-[family-name:var(--font-figtree)] rounded-full px-8 py-3 transition-colors hover:opacity-90"
+                  style={{
+                    backgroundColor: "var(--brand-yellow)",
+                    fontSize: "16px",
+                    color: "#000"
+                  }}
+                >
+                  Talk to an Expert
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 	  
 
       {/* Footer */}
