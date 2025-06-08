@@ -200,6 +200,209 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="relative w-full py-20" style={{backgroundColor: "#fff6db"}}>
+        <div className="w-full flex items-center justify-center">
+          <div className="w-[1275px] px-6 flex flex-col items-center">
+            {/* Section Header */}
+            <div className="flex flex-col items-center mb-16">
+              <div 
+                className="inline-block w-fit rounded-full px-6 py-3 mb-8"
+                style={{
+                  backgroundColor: "var(--brand-orange-light)",
+                  border: "1px solid var(--brand-orange)",
+                  color: "var(--brand-orange)"
+                }}
+              >
+                <span 
+                  className="font-[family-name:var(--font-poppins)] font-normal"
+                  style={{ fontSize: "16px" }}
+                >
+                  Why Choose Us
+                </span>
+              </div>
+              
+              <h2 
+                className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight text-center mb-6"
+                style={{ fontSize: "48px" }}
+              >
+                NadaLabs Solutions
+              </h2>
+              
+              <p 
+                className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 text-center leading-relaxed max-w-4xl"
+                style={{ fontSize: "16px" }}
+              >
+                Broad network expertise from a single provider. This is what an intelligent infrastructure looks like.
+              </p>
+            </div>
+            
+            {/* Two Column List */}
+            <div className="w-full flex items-start space-x-12">
+              {/* Column 1 - NextGen Communications */}
+              <div className="w-1/2 flex flex-col">
+                <h3 
+                  className="font-[family-name:var(--font-inter)] font-normal text-black mb-6"
+                  style={{ fontSize: "20px" }}
+                >
+                  NextGen Communications
+                </h3>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/bubble.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      UCaaS
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/bubble.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Managed SIP
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/bubble.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      SIP Trunking
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/bubble.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Voice Enabled Teams
+                    </span>
+                  </li>
+                </ul>
+                
+                <p 
+                  className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed"
+                  style={{ fontSize: "16px" }}
+                >
+                  NextGen Communications providing communication and collaboration for businesses
+                </p>
+              </div>
+              
+              {/* Column 2 - Managed Services */}
+              <div className="w-1/2 flex flex-col">
+                <h3 
+                  className="font-[family-name:var(--font-inter)] font-normal text-black mb-6"
+                  style={{ fontSize: "20px" }}
+                >
+                  Managed Services
+                </h3>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/hub.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Managed Connectivity
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/hub.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Managed SD-WAN
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/hub.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Technology Expense Management
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <Image
+                      src="/hub.png"
+                      alt="Bullet"
+                      width={16}
+                      height={16}
+                      className="flex-shrink-0"
+                    />
+                    <span 
+                      className="font-[family-name:var(--font-poppins)] font-normal text-gray-700"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Network Monitoring & Management
+                    </span>
+                  </li>
+                </ul>
+                
+                <p 
+                  className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed"
+                  style={{ fontSize: "16px" }}
+                >
+                  Managed services offering connectivity, cloud computing, proactive network management and optimization
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 	  
 
       {/* Footer */}
