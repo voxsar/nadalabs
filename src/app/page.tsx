@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Loader from '@/components/Loader';
 import { AnimatedSection } from '@/hooks/useIntersectionObserver';
@@ -8,122 +8,129 @@ import { AnimatedSection } from '@/hooks/useIntersectionObserver';
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (isLoading) {
     return <Loader onComplete={() => setIsLoading(false)} />;
-  }
-
-  return (
+  }  return (
     <div className="min-h-screen bg-background">      {/* Sticky Header Menu */}
-      <AnimatedSection animation="fade-in-up" delay={0}>
-        <header className="sticky top-0 z-50 h-[80px] md:h-[106px] bg-white/90 backdrop-blur-sm shadow-lg shadow-black/10">
-          <div className="w-full h-full flex items-center justify-center px-4 md:px-6">
-            <div className="w-full max-w-[1275px] h-full flex items-center justify-between">
-              <div className="flex flex-col items-start">
-                <Image
-                  src="/logo.png"
-                  alt="Logo"
-                  width={120}
-                  height={30}
-                  className="md:w-[167px] md:h-[42px]"
-                />
-                <p className="text-black font-semibold mt-1 text-[9px] md:text-[11px]">Simplifying Managed Services</p>
-              </div>
-              
-              <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
-                <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
-                  Home
-                </a>
-                <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
-                  Company
-                </a>
-                <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
-                  Services
-                </a>
-                <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
-                  Resources
-                </a>
-                <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
-                  Contact Us
-                </a>
-              </nav>
+      <header className={`sticky top-0 z-50 h-[80px] md:h-[106px] transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xl' : 'bg-white/90 backdrop-blur-sm shadow-lg'} shadow-black/10`}>
+        <div className="w-full h-full flex items-center justify-center px-4 md:px-6">
+          <div className="w-full max-w-[1275px] h-full flex items-center justify-between">
+            <div className="flex flex-col items-start">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={120}
+                height={20}
+                className="md:w-[167px] md:h-[27px]"
+              />
+              <p className="text-black font-semibold mt-1 text-[9px] md:text-[11px]">Simplifying Managed Services</p>
+            </div>
+            
+            <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
+                Home
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
+                Company
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
+                Services
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
+                Resources
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-sm">
+                Contact Us
+              </a>
+            </nav>
 
+            <a 
+              className="hidden lg:block font-[family-name:var(--font-figtree)] rounded-full px-8 xl:px-16 py-2.5 transition-colors hover:opacity-90 text-sm xl:text-base"
+              style={{
+                backgroundColor: "var(--brand-yellow)",
+                color: "#000"
+              }}
+              href="#"
+            >
+              Request a Demo
+            </a>              {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden flex flex-col space-y-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <span className={`w-6 h-0.5 bg-foreground transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`w-6 h-0.5 bg-foreground transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-6 h-0.5 bg-foreground transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </button>
+          </div>
+        </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+            <nav className="flex flex-col p-4 space-y-4">
               <a 
-                className="hidden lg:block font-[family-name:var(--font-figtree)] rounded-full px-8 xl:px-16 py-2.5 transition-colors hover:opacity-90 text-sm xl:text-base"
+                href="#" 
+                className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a 
+                href="#" 
+                className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Company
+              </a>
+              <a 
+                href="#" 
+                className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </a>
+              <a 
+                href="#" 
+                className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Resources
+              </a>
+              <a 
+                href="#" 
+                className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </a>
+              <a 
+                className="font-[family-name:var(--font-figtree)] rounded-full px-6 py-2.5 transition-colors hover:opacity-90 text-center mt-4"
                 style={{
                   backgroundColor: "var(--brand-yellow)",
                   color: "#000"
                 }}
                 href="#"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Request a Demo
-              </a>              {/* Mobile Menu Button */}
-              <button 
-                className="lg:hidden flex flex-col space-y-1"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              >
-                <span className={`w-6 h-0.5 bg-foreground transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-foreground transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-foreground transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-              </button>
-            </div>
+              </a>
+            </nav>
           </div>
-          
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
-              <nav className="flex flex-col p-4 space-y-4">
-                <a 
-                  href="#" 
-                  className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </a>
-                <a 
-                  href="#" 
-                  className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Company
-                </a>
-                <a 
-                  href="#" 
-                  className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Services
-                </a>
-                <a 
-                  href="#" 
-                  className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Resources
-                </a>
-                <a 
-                  href="#" 
-                  className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)] text-base py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Us
-                </a>
-                <a 
-                  className="font-[family-name:var(--font-figtree)] rounded-full px-6 py-2.5 transition-colors hover:opacity-90 text-center mt-4"
-                  style={{
-                    backgroundColor: "var(--brand-yellow)",
-                    color: "#000"
-                  }}
-                  href="#"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Request a Demo
-                </a>
-              </nav>
-            </div>
-          )}
-        </header>
-      </AnimatedSection>      {/* Hero Slider Section */}
+        )}
+      </header>{/* Hero Slider Section */}
       <AnimatedSection animation="fade-in-right" delay={200}>
         <section className="relative w-full h-[400px] md:h-[500px] lg:h-[620px] bg-white">
           {/* Image positioned relative to full section - Hidden on mobile */}
@@ -143,9 +150,10 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1275px] h-full px-4 md:px-6">
             <div className="relative w-full h-full">
               {/* Left column for content */}
-              <div className="absolute left-0 top-0 w-full md:w-1/2 h-full flex flex-col justify-center md:justify-start items-start text-center md:text-left">
+              <div className="absolute mt-10 left-0 top-0 w-full md:w-1/2 h-full flex flex-col justify-center md:justify-start md:items-end lg:items-start text-center md:text-left">
                 <h1 
-                  className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight mb-6 md:mb-15 text-2xl md:text-4xl lg:text-5xl xl:text-[3.2rem]"
+                  className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight mb-6 md:mb-15 text-2xl md:text-4xl lg:text-5xl xl:text-[3.2rem]
+				  md:text-text-left lg:text-left xl:text-left"
                   style={{ textTransform: "uppercase" }}
                 >
                   NextGen<br />
