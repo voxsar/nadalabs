@@ -2,101 +2,154 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background">
+      {/* Sticky Header Menu */}
+      <header className="sticky top-0 z-50 h-[106px] bg-white/90 backdrop-blur-sm shadow-lg shadow-black/10">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-[1275px] h-full flex items-center justify-between">
+            <div className="flex flex-col items-start">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={167}
+                height={42}
+              />
+              <p style={{fontSize: "11px"}} className="text-black mt-1">Simplifying Managed Services</p>
+            </div>
+            
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)]" style={{fontSize: "14px"}}>
+                Home
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)]" style={{fontSize: "14px"}}>
+                Company
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)]" style={{fontSize: "14px"}}>
+                Services
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)]" style={{fontSize: "14px"}}>
+                Resources
+              </a>
+              <a href="#" className="text-foreground hover:text-blue-600 font-normal transition-colors font-[family-name:var(--font-poppins)]" style={{fontSize: "14px"}}>
+                Contact Us
+              </a>
+            </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <button 
+              className="hidden md:block font-[family-name:var(--font-figtree)] rounded-full px-7 py-2.5 transition-colors hover:opacity-90"
+              style={{
+                backgroundColor: "var(--brand-yellow)",
+                fontSize: "16px",
+                color: "#000"
+              }}
+            >
+              Request a Demo
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden flex flex-col space-y-1">
+              <span className="w-6 h-0.5 bg-foreground"></span>
+              <span className="w-6 h-0.5 bg-foreground"></span>
+              <span className="w-6 h-0.5 bg-foreground"></span>
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </header>
+
+      {/* Hero Slider Section */}
+      <section className="relative w-full h-[671px] bg-gray-100">
+        {/* Image positioned relative to full section */}
+        <div className="absolute right-0 bottom-0 w-1/2 h-[608px] overflow-hidden">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/slider_right_desk.png"
+            alt="Slider Desktop"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto object-cover object-top-left"
+            style={{ minHeight: '100%' }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        </div>
+        
+        {/* Boxed layout for content */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[1275px] h-[608px] ">
+          <div className="relative w-full h-full">
+            {/* Left column for content */}
+            <div className="absolute left-0 top-0 w-1/2 h-full flex flex-col justify-start items-start">
+              <h1 
+                className="font-[family-name:var(--font-inter)] font-normal text-black leading-tight mb-15"
+                style={{ fontSize: "3.2rem", "textTransform": "uppercase" }}
+              >
+                NextGen<br />
+                Communications &<br />
+                Managed Services
+              </h1>
+              
+              <p 
+                className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 mb-15 leading-relaxed"
+                style={{ fontSize: "20px" }}
+              >
+                Nadalabs takes the complexity out of business communications for Large-enterprises and<br /> resellers.
+              </p>
+              
+              <div className="flex items-center space-x-4">
+                <button 
+                  className="font-[family-name:var(--font-figtree)] rounded-full px-8 py-3 transition-colors hover:opacity-90"
+                  style={{
+                    backgroundColor: "var(--brand-yellow)",
+                    fontSize: "16px",
+                    color: "#000"
+                  }}
+                >
+                  Talk to a Expert
+                </button>
+                
+                <button 
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-colors hover:opacity-90"
+                  style={{
+                    backgroundColor: "var(--brand-orange-light)",
+					border: "1px solid var(--brand-orange)",
+                  }}
+                >
+                  <svg 
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 16 16" 
+                    fill="none"
+                    style={{ color: "var(--brand-yellow)" }}
+                  >
+                    <path 
+                      d="M3 2L13 8L3 14V2Z" 
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+	  
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </div>
+            <p className="text-gray-400 text-sm">
+              © 2025 All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );
