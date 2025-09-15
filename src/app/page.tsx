@@ -545,11 +545,13 @@ export default function Home() {
                       <div 
                         className="font-[family-name:var(--font-poppins)] font-normal text-gray-700 leading-relaxed text-sm md:text-base"
                       >
-                        157/4A Awariwatta Rd,<br />
-                        Wattala,<br />
-                        Sri Lanka.
-                      </div>
-                    </div>
+                    Nada Labs (PVT) LTD<br />
+                    Level 35, West Tower<br />
+                    World Trade Center,<br />
+                    Colombo – 01,<br />
+                    Sri Lanka.
+                  </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -662,13 +664,15 @@ export default function Home() {
                 <div 
                   className="font-[family-name:var(--font-poppins)] font-normal text-white leading-relaxed text-lg md:text-xl"
                 >
-                  157/4A Awariwatta Rd,<br />
-                  Wattala,<br />
-                  Sri Lanka.
+                    Nada Labs (PVT) LTD<br />
+                    Level 35, West Tower<br />
+                    World Trade Center,<br />
+                    Colombo – 01,<br />
+                    Sri Lanka.
+                  </div>
                 </div>
-              </div>
-              
-              {/* Column 2 */}
+
+                {/* Column 2 */}
               <div className="w-full lg:w-1/2 flex flex-col justify-between h-full">
                 {/* Top Content - Email Subscribe */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0 mb-8 md:mb-12">
